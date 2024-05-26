@@ -1,6 +1,6 @@
 ![Java CI with Maven](https://github.com/Salarionhell/TZ2/actions/workflows/maven.yml/badge.svg)
 
-###Часть 1
+### Часть 1
 
 1) **Реализованы функции чтения из файла, поиска минимального числа, поиска максимального числа, сложения и умножения всех чисел из файла.**
    
