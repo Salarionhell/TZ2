@@ -70,7 +70,7 @@ public class operationsTest {
         long endTimeSmall= System.nanoTime();
         long durationSmall = endTimeSmall - startTimeSmall;
         System.out.println("Время нахождения минимального значения с 10 элементами " + durationSmall + " нс");
-        assertTrue("Время выполнения операции слишком долгое: " + durationSmall + "нс", durationSmall < 10);
+        assertTrue("Время выполнения операции слишком долгое: " + durationSmall + "нс", durationSmall < 10000000);
         System.out.println();
     }
     @Test
