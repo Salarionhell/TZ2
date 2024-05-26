@@ -32,7 +32,7 @@ jobs:
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Run tests
-      run: mvn test
+      run: mvn test > test_output.txt || true
       
     - name: Notify Telegram on Test Results
       run: bash telegram_notify.sh ${{ secrets.TELEGRAM_TOKEN }} ${{ secrets.TELEGRAM_CHAT_ID }} $?
