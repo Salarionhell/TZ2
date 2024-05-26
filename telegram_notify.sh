@@ -4,10 +4,14 @@
 TELEGRAM_TOKEN=$1
 TELEGRAM_CHAT_ID=$2
 
+mvn test > test_output.txt
+
+ERRORS=$(grep -i "ERROR" test_output.txt)
+
 if [ $3 -eq 0 ]; then
     MESSAGE="Всё ок"
 else
-    MESSAGE="Тесты не пройдены"
+    MESSAGE="Тесты не пройдены. Ошибки:\n$ERRORS"
 fi
 
 # Отправка сообщения через Telegram API
