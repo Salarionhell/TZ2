@@ -14,7 +14,7 @@ public class operationsTest {
     @Test
     public void programExceptionFirst() throws NumberFormatException {
         Throwable thrown = assertThrows(NumberFormatException.class, () -> {
-            Operations.other("fileWrong.txt");
+            Operations.readNumbers("fileWrong.txt");
         });
         assertNotNull(thrown.getMessage());
 
@@ -23,7 +23,7 @@ public class operationsTest {
     @Test
     public void programExceptionSecond() throws IOException {
         Throwable thrown = assertThrows(IOException.class, () -> {
-            Operations.other("empty.txt");
+            Operations.readNumbers("empty.txt");
         });
         assertNotNull(thrown.getMessage());
 
