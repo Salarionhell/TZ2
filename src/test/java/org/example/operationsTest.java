@@ -50,7 +50,7 @@ public class operationsTest {
         assertEquals(BigInteger.valueOf(144), Operations.mult(numbers));
     }
     @Test
-    @Ignore
+    @Disabled
     public void testTimeMin(){
         int[] numbersBig = new int[1000000];
         for (int i = 0; i < 1000000; i++) {
