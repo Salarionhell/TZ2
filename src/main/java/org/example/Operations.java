@@ -4,7 +4,7 @@ import java.io.*;
 public class Operations {
     public static void main(String[] args) {
         try {
-            processNumbers(readNumbers("file.txt"));
+            processNumbers(other("file.txt"));
         } catch (IOException e) {
             System.out.println("Ошибка: " + e.getMessage());
         }
