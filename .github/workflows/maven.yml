@@ -35,7 +35,7 @@ jobs:
       run: mvn test
       
     - name: Notify Telegram on Test Results
-      run: bash telegram_notify.sh ${{ secrets.TELEGRAM_TOKEN }} ${{ secrets.TELEGRAM_CHAT_ID }} $?
+      run: bash telegram_notify.sh ${{ secrets.TELEGRAM_TOKEN }} ${{ secrets.TELEGRAM_CHAT_ID }} $? #$? - Статус завершения работы команды, функции или самого скрипта
       env:
         TELEGRAM_TOKEN: ${{ secrets.TELEGRAM_TOKEN }}
         TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
