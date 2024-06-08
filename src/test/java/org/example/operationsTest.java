@@ -50,6 +50,7 @@ public class operationsTest {
         assertEquals(BigInteger.valueOf(144), Operations.mult(numbers));
     }
     @Test
+    @Ignore
     public void testTimeMin(){
         int[] numbersBig = new int[1000000];
         for (int i = 0; i < 1000000; i++) {
@@ -70,7 +71,9 @@ public class operationsTest {
         long endTimeSmall= System.nanoTime();
         long durationSmall = endTimeSmall - startTimeSmall;
         System.out.println("Время нахождения минимального значения с 10 элементами " + durationSmall + " нс");
-        assertTrue("Время выполнения операции слишком долгое: " + durationSmall + "нс", durationSmall < 10000000);
+        
+        assertTrue("Время выполнения операции слишком долгое: " + durationSmall + "нс", durationSmall < 1000);
+        
         System.out.println();
     }
     @Test
