@@ -2,8 +2,12 @@ package org.example;
 import java.math.BigInteger;
 import java.io.*;
 public class Operations {
-    public static void main( String[] args) throws IOException{
-        other("file.txt");
+    public static void main(String[] args) {
+        try {
+            processNumbers(readNumbers("file.txt"));
+        } catch (IOException e) {
+            System.out.println("Ошибка: " + e.getMessage());
+        }
     }
     public static int[] readNumbers(String fileName) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
