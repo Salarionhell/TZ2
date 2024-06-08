@@ -40,6 +40,7 @@ public class Operations {
             throw new NumberFormatException("Ошибка");
         }
     }
+    
     public static int min(int[] numbers) {
         int min = Integer.MAX_VALUE;
         for (int i : numbers) {
