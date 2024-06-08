@@ -72,7 +72,7 @@ public class operationsTest {
         long durationSmall = endTimeSmall - startTimeSmall;
         System.out.println("Время нахождения минимального значения с 10 элементами " + durationSmall + " нс");
         
-        assertTrue("Время выполнения операции слишком долгое: " + durationSmall + "нс", durationSmall < 1000);
+        assertTrue("Время выполнения операции слишком долгое: " + durationSmall + "нс", durationSmall < 1000); //падающий тест
         
         System.out.println();
     }
