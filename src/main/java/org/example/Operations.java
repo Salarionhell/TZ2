@@ -5,21 +5,23 @@ public class Operations {
     public static void main( String[] args) throws IOException{
         other("file.txt");
     }
-    public static void other(String fileName) throws IOException{
-        try {
-            int[] numbers;
-            try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
-                String k = reader.readLine();
-                if (k != null) {
-                    String[] numberStrings = k.split(" ");
-                    numbers = new int[numberStrings.length];
-                    for (int i = 0; i < numberStrings.length; i++) {
-                        numbers[i] = Integer.parseInt(numberStrings[i]);
-                    }
-                } else {
-                    throw new IOException("Файл пуст");
+    public static int[] readNumbers(String fileName) throws IOException {
+        try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
+            String k = reader.readLine();
+            if (k != null) {
+                String[] numberStrings = k.split(" ");
+                int[] numbers = new int[numberStrings.length];
+                for (int i = 0; i < numberStrings.length; i++) {
+                    numbers[i] = Integer.parseInt(numberStrings[i]);
                 }
+                return numbers;
+            } else {
+                throw new IOException("Файл пуст");
             }
+        }
+    }
+    public static void processNumbers(int[] numbers) {
+        try {
             int min = min(numbers);
             int max = max(numbers);
             BigInteger sum = sum(numbers);
@@ -31,8 +33,6 @@ public class Operations {
             System.out.println("Произведение всех чисел: " + mult);
         } catch (NumberFormatException e) {
             throw new NumberFormatException("Ошибка");
-        } catch (IOException e) {
-            throw new IOException(e);
         }
     }
     public static int min(int[] numbers) {
