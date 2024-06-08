@@ -2,9 +2,10 @@ package org.example;
 import java.math.BigInteger;
 import java.io.*;
 public class Operations {
+    private final static String fileName = "file.txt";
     public static void main(String[] args) {
         try {
-            processNumbers(readNumbers("file.txt"));
+            processNumbers(readNumbers(fileName));
         } catch (IOException e) {
             System.out.println("Ошибка: " + e.getMessage());
         }
