@@ -4,12 +4,12 @@ import java.io.*;
 public class Operations {
     public static void main(String[] args) {
         try {
-            processNumbers(other("file.txt"));
+            processNumbers(readNumbers("file.txt"));
         } catch (IOException e) {
             System.out.println("Ошибка: " + e.getMessage());
         }
     }
-    public static int[] other(String fileName) throws IOException {
+    public static int[] readNumbers(String fileName) throws IOException {
         try (BufferedReader reader = new BufferedReader(new FileReader(fileName))) {
             String k = reader.readLine();
             if (k != null) {
