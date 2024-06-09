@@ -1,13 +1,18 @@
 package org.example;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.RepeatedTest;
 
 import java.io.IOException;
 import java.math.BigInteger;
 
+import static java.time.Duration.ofMillis;
+import static java.time.Duration.ofNanos;
 import static org.junit.Assert.*;
+import static org.junit.jupiter.api.Assertions.assertTimeout;
 
 public class operationsTest {
     @Before
@@ -47,5 +52,17 @@ public class operationsTest {
         int[] numbers = {2, 1, 3, 4, 6};
         assertEquals(BigInteger.valueOf(144), Operations.mult(numbers));
     }
-    
+
+    @Test
+    @Ignore
+    public void testPerformance() {
+        int[] numbers = new int[1000000];
+        for (int i = 0; i < 1000000; i++) {
+            numbers[i] = i;
+        }
+
+        assertTimeout(ofNanos(100), () -> {
+            Operations.min(numbers);
+        });
+    }
 }
